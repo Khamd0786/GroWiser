@@ -1,0 +1,1 @@
+/Users/hammadkhan/AndroidStudioProjects/GroWiser/buildSrc/build/classes/kotlin/main/Dependencies.class:/Users/hammadkhan/AndroidStudioProjects/GroWiser/buildSrc/build/classes/kotlin/main/DependenciesKt.class
