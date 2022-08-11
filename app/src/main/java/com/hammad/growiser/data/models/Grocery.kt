@@ -2,7 +2,6 @@ package com.hammad.growiser.data.models
 
 import com.google.gson.annotations.SerializedName
 
-
 data class Grocery(
     @SerializedName("arrival_date") val arrival_date: String,
     @SerializedName("commodity") val commodity: String,

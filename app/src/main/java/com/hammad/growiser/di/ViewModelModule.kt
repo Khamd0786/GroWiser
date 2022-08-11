@@ -2,7 +2,7 @@ package com.hammad.growiser.di
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.hammad.growiser.viewmodel.CoreViewModel
+import com.hammad.growiser.viewmodel.GroceryViewModel
 import dagger.Binds
 import dagger.MapKey
 import dagger.Module
@@ -13,7 +13,6 @@ import javax.inject.Singleton
 import kotlin.reflect.KClass
 
 @Singleton
-//@JvmDefaultWithCompatibility
 class ViewModelFactory @Inject constructor(private val viewModel: MutableMap<Class<out ViewModel>, Provider<ViewModel>>) :
     ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
@@ -38,8 +37,8 @@ class ViewModelFactory @Inject constructor(private val viewModel: MutableMap<Cla
 
         @Binds
         @IntoMap
-        @ViewModelKey(CoreViewModel::class)
-        internal abstract fun coreVM(viewModel: CoreViewModel): ViewModel
+        @ViewModelKey(GroceryViewModel::class)
+        internal abstract fun coreVM(viewModel: GroceryViewModel): ViewModel
 
     }
 }

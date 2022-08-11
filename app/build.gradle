@@ -2,8 +2,9 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
+    id 'jacoco'
 }
-//data domain view
+
 android {
     compileSdk 32
 
@@ -30,6 +31,11 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    buildFeatures {
+        viewBinding true
+        dataBinding true
+    }
+
 }
 
 dependencies {
@@ -40,5 +46,10 @@ dependencies {
     Dependencies.INSTANCE.applyCoroutines(dependencies)
     Dependencies.INSTANCE.applyRetrofit(dependencies)
     Dependencies.INSTANCE.applyRoom(dependencies)
+    Dependencies.INSTANCE.applyPaging(dependencies)
+
+    // Chucker
+    debugImplementation "com.github.chuckerteam.chucker:library:3.5.2"
+    releaseImplementation "com.github.chuckerteam.chucker:library-no-op:3.5.2"
 
 }

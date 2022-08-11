@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">GroWiser</string>
+    <string name="sector">Sector</string>
+    <string name="market">Market</string>
+    <string name="variety">Variety</string>
+    <string name="commodity">Commodity</string>
+    <string name="arrival_date">Arrival Date</string>
+    <string name="min_price">Min Price</string>
+    <string name="max_price">Max Price</string>
+    <string name="modal_price">Modal Price</string>
+    <string name="district">District</string>
+    <string name="state">State</string>
 </resources>

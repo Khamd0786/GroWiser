@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:background="?colorOnPrimary"
+    android:elevation="8dp"
+    android:paddingHorizontal="@dimen/tri_space"
+    android:paddingVertical="@dimen/duo_space">
+
+    <include
+        android:id="@+id/containerSector"
+        layout="@layout/layout_heading_data"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/containerMarket"
+        layout="@layout/layout_heading_data"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/containerSector" />
+
+    <include
+        android:id="@+id/containerVariety"
+        layout="@layout/layout_heading_data"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/containerMarket" />
+
+    <include
+        android:id="@+id/containerCommodity"
+        layout="@layout/layout_heading_data"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/containerVariety" />
+
+    <include
+        android:id="@+id/containerMinPrice"
+        layout="@layout/layout_heading_data"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/containerCommodity" />
+
+    <include
+        android:id="@+id/containerMaxPrice"
+        layout="@layout/layout_heading_data"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/containerMinPrice" />
+
+    <include
+        android:id="@+id/containerModalPrice"
+        layout="@layout/layout_heading_data"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/containerMaxPrice" />
+
+
+    <include
+        android:id="@+id/containerArrivalDate"
+        layout="@layout/layout_heading_data"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/containerModalPrice" />
+
+    <include
+        android:id="@+id/containerState"
+        layout="@layout/layout_heading_data"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/containerArrivalDate" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

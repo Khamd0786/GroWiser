@@ -6,8 +6,7 @@ import com.hammad.growiser.data.db.dao.FieldDao
 import com.hammad.growiser.data.models.Field
 
 @Database(entities = [Field::class], version = 1)
-abstract class AppDatabase: RoomDatabase() {
+abstract class AppDatabase : RoomDatabase() {
 
     abstract fun getFieldsDao(): FieldDao
-
 }

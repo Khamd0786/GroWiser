@@ -3,6 +3,9 @@ import org.gradle.api.artifacts.dsl.DependencyHandler
 const val implementation = "implementation"
 const val testImplementation = "testImplementation"
 const val androidTestImplementation = "androidTestImplementation"
+const val debugImplementation = "debugImplementation"
+const val releaseImplementation = "releaseImplementation"
+const val annotationProcessor = "annotationProcessor"
 const val api = "api"
 const val kapt = "kapt"
 
@@ -22,7 +25,9 @@ object Dependencies {
     private const val material = "com.google.android.material:material:1.4.0"
     private const val jUnit = "junit:junit:4.13.2"
     private const val extJunit = "androidx.test.ext:junit:1.1.3"
+    private const val archTest  = "androidx.arch.core:core-testing:2.1.0"
     private const val espresso = "androidx.test.espresso:espresso-core:3.4.0"
+
 
     private const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0"
     private const val liveData = "androidx.lifecycle:lifecycle-livedata-ktx:2.4.0"
@@ -36,6 +41,9 @@ object Dependencies {
     private const val roomPaging = "androidx.room:room-paging:2.4.0"
 
     private const val paging = "androidx.paging:paging-runtime:3.1.0"
+
+    const val chuck = "com.github.ChuckerTeam.Chucker:library:3.5.2"
+    const val chuckNoOp = "com.github.ChuckerTeam.Chucker:library-no-op:3.5.2"
 
     private const val timber = "com.jakewharton.timber:timber:5.0.1"
 
@@ -55,6 +63,7 @@ object Dependencies {
         handler.add(implementation, material)
         handler.add(testImplementation, jUnit)
         handler.add(androidTestImplementation, extJunit)
+        handler.add(androidTestImplementation, archTest)
         handler.add(androidTestImplementation, espresso)
     }
 
@@ -76,9 +85,16 @@ object Dependencies {
 
     fun applyRoom(handler: DependencyHandler) {
         handler.add(implementation, room)
-        handler.add(implementation, roomCompiler)
+        handler.add(kapt, roomCompiler)
         handler.add(implementation, roomPaging)
     }
 
+    fun applyPaging(handler: DependencyHandler) {
+        handler.add(implementation, paging)
+    }
 
+    fun applyChuck(handler: DependencyHandler) {
+//        handler.add(debugImplementation, chuck)
+//        handler.add(releaseImplementation, chuckNoOp)
+    }
 }
