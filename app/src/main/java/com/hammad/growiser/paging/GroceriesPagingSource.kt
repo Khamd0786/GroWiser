@@ -32,8 +32,7 @@ class GroceriesPagingSource(
             }.run {
                 when (this) {
                     is NetworkRequest.ApiResponse.Success ->
-                        data
-                            ?: throw Exception("Error fetching groceries")
+                        data ?: throw Exception("Error fetching groceries")
                     else -> throw Exception("Error fetching groceries")
                 }
             }

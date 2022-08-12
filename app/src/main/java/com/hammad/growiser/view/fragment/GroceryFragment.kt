@@ -35,6 +35,8 @@ class GroceryFragment : Fragment() {
     private lateinit var binding: FragmentGroceryBinding
     private lateinit var adapter: GroceryAdapter
 
+    private lateinit var mSpinner: ArrayAdapter<String>
+
     private var job: Job? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -65,21 +67,17 @@ class GroceryFragment : Fragment() {
         binding.recycler.layoutManager = LinearLayoutManager(context)
         binding.recycler.adapter = adapter
 
-        val fields = viewModel.mFields.map { it.name }
-        val spinnerAdapter = ArrayAdapter(context ?: return, R.layout.simple_spinner_item, fields)
-        binding.spinner.adapter = spinnerAdapter
+        initSpinnerAdapter() // initializing spinner adapter
     }
 
     private fun bindListener() {
         binding.spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
                 viewModel.mField = viewModel.mFields[p2].id
-                viewModel.fetchGroceries()
+                viewModel.fetchGroceries() // fetching groceries when type got changed
             }
 
-            override fun onNothingSelected(p0: AdapterView<*>?) {
-                viewModel.mField = null
-            }
+            override fun onNothingSelected(p0: AdapterView<*>?) {}
         }
 
         binding.searchView.setOnQueryTextListener(object :
@@ -98,6 +96,15 @@ class GroceryFragment : Fragment() {
             })
     }
 
+    private fun initSpinnerAdapter() {
+        val fields = viewModel.mFields.map { it.name }
+        mSpinner = ArrayAdapter(context ?: return, R.layout.simple_spinner_item, fields)
+        binding.spinner.adapter = mSpinner
+    }
+
+    /**
+     * This function will execute the new calls only and wait for a specific time period
+     */
     private fun searchDebouncedQuery() {
         job?.cancel()
         job = lifecycleScope.launchWhenCreated {

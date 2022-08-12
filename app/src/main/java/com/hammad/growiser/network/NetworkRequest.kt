@@ -3,8 +3,14 @@ package com.hammad.growiser.network
 import org.json.JSONObject
 import retrofit2.Response
 
+/**
+ * This class [NetworkRequest] will handle the api calls process and send the data in `Success` and `Failure` state.
+ */
 object NetworkRequest {
 
+    /**
+     * Process and check whether we received data in correct format or not and throw error and data accordingly
+     */
     suspend fun <T> process(api: suspend () -> Response<T>): ApiResponse<T> {
         return try {
             val response = api()
@@ -26,6 +32,9 @@ object NetworkRequest {
         }
     }
 
+    /**
+     * It only has `Success` and `Failure` response as api calls don't send `Loading` state
+     */
     sealed class ApiResponse<out T> {
         data class Success<out T>(val code: Int, val message: String, val data: T?) :
             ApiResponse<T>()

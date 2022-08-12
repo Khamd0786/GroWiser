@@ -25,16 +25,16 @@ class GroceryAdapter : PagingDataAdapter<Grocery, GroceryAdapter.VH>(Comparator)
                 containerCommodity.data.text = item.commodity
 
                 containerArrivalDate.heading.text = binding.root.context.getString(R.string.arrival_date)
-                containerArrivalDate.data.text = item.arrival_date
+                containerArrivalDate.data.text = item.arrivalDate
 
                 containerMinPrice.heading.text = binding.root.context.getString(R.string.min_price)
-                containerMinPrice.data.text = item.min_price
+                containerMinPrice.data.text = item.minPrice
 
                 containerMaxPrice.heading.text = binding.root.context.getString(R.string.max_price)
-                containerMaxPrice.data.text = item.max_price
+                containerMaxPrice.data.text = item.maxPrice
 
                 containerModalPrice.heading.text = binding.root.context.getString(R.string.modal_price)
-                containerModalPrice.data.text = item.modal_price
+                containerModalPrice.data.text = item.modalPrice
 
                 containerSector.heading.text = binding.root.context.getString(R.string.district)
                 containerSector.data.text = item.district

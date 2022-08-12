@@ -8,10 +8,8 @@ import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
 
-
 @Module
 class DatabaseModule {
-
 
     @Provides
     @Singleton
@@ -24,5 +22,4 @@ class DatabaseModule {
     @Provides
     @Singleton
     fun provideFieldDao(db: AppDatabase): FieldDao = db.getFieldsDao()
-
 }
